@@ -111,3 +111,78 @@
     ],
 ];
 
+
+
+// $place=array();
+// echo "Daerah Otonomi Indonesia\n";
+// echo "=================\n";
+
+// $filter_provinsi=readline("masukan nama provinsi :");
+// $filter_kawasan=readline("masukan nama kawasan :");
+
+// foreach($provinsi as $key=>$value){
+//     if ($value['provinsi']==$filter_provinsi && $value['kawasan']==$filter_kawasan){
+
+//         $place[]=[$value['provinsi'],$value['kawasan'],$value['kota']];
+//     }
+// }
+
+// print_r($place);
+
+
+$data_menu=[".all",".provinsi",".kawasan",".exit"];
+
+$berhenti=true;
+while($berhenti)
+{
+    echo "\nDaerah Otonomi Indonesia\n";
+    echo "=========================\n";
+    $nomor=1 ;
+    foreach($data_menu as $data)
+    {
+        echo $nomor.$data."\n";
+        $nomor++;
+    }
+
+    $pilih_menu=readline("Pili menu :");
+
+    if($pilih_menu==1)
+    {
+    
+        echo "all\n";
+        
+            foreach($provinsi as $value){
+                echo $value['provinsi'].' | ',$value['kota'].' | ',$value['kawasan'].PHP_EOL;
+            }
+        
+           
+    }elseif($pilih_menu==2)
+    {
+        $filter_provinsi=readline('masukan nama provinsi :');
+        foreach($provinsi as $value){
+            if ($value['provinsi']==$filter_provinsi){
+        
+                echo $value['provinsi'].' | ',$value['kawasan'].' | ',$value['kota'].PHP_EOL;
+            }else{
+                echo "Maaf Provinisi tersebut tidak terdaftar\n";
+            }
+        break;
+        }
+    }elseif($pilih_menu==3)
+    {
+        $filter_kawasan=readline('masukan nama kawasan :');
+        foreach($provinsi as $value){
+            if ($value['kawasan']==$filter_kawasan){
+                echo $value['provinsi'].' | ',$value['kawasan']." | ",$value['kota'].PHP_EOL;
+            }else{
+                echo "Maaf Kawasan tersebut tidak terdaftar\n";
+            }
+        break;
+        }
+    }elseif($pilih_menu==4){
+       exit;
+    }else{
+        echo "anda tidak memilih menu";
+    }
+
+}

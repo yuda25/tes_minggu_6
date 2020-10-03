@@ -6,4 +6,3 @@
 * Minimal poin 12, jika poin siswa dibawah 12 maka siswa wajib remidi,remidial dikerjakan diluar jam pelajaran
 * Batas waktu pengerjaan jam 17.00
 
-
